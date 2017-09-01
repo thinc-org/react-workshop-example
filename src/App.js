@@ -3,9 +3,12 @@ import React from 'react'
 class App extends React.Component {
   render() {
     return (
-      <h1> Hello Fucking React! </h1>
+      <div>
+        <input type="text"></input>
+        <button>Add Subject</button>
+      </div>
     )
   }
 }
 
-export default App
+export default App 
