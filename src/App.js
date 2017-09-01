@@ -19,7 +19,8 @@ class App extends React.Component {
   }
   addSubject() {
     this.setState({    
-      subjects: [...this.state.subjects, this.state.subjectName]
+      subjects: [...this.state.subjects, this.state.subjectName],
+      subjectName: ''
     })
   }
   removeSubject(index) {
@@ -32,7 +33,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      < SubjectAdder />
+      < SubjectAdder handleOnChange={this.handleOnChange} addSubject={this.addSubject} value={this.state.subjectName}/>
       <div>
         { this.state.subjects.map((subject, index) => {
           return (
