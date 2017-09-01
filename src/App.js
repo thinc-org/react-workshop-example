@@ -10,6 +10,7 @@ class App extends React.Component {
     this.incrementCounter = this.incrementCounter.bind(this)
     this.handleOnChange = this.handleOnChange.bind(this)
     this.addSubject = this.addSubject.bind(this)
+    this.removeSubject = this.removeSubject.bind(this)
   }
   incrementCounter() {
     this.setState({
@@ -26,6 +27,13 @@ class App extends React.Component {
       subjects: [...this.state.subjects, this.state.subjectName]
     })
   }
+  removeSubject(index) {
+    let newSubjects = [...this.state.subjects]
+    newSubjects.splice(index, 1)
+    this.setState({
+      subjects: newSubjects
+    })
+  }
   render() {
     return (
       <div>
@@ -39,8 +47,12 @@ class App extends React.Component {
         <button onClick={this.addSubject}>Add Subject</button>
       </div>
       <div>
-        { this.state.subjects.map(subject => {
-          return <li> {subject} </li>
+        { this.state.subjects.map((subject, index) => {
+          return (
+            <li>
+              <span>{subject}</span> 
+              <button onClick={() => this.removeSubject(index)}>Remove Subject</button>
+            </li>)
         })}
       </div>
       </div>
