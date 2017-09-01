@@ -1,30 +1,23 @@
 import React from 'react'
+
+import SubjectAdder from './SubjectAdder'
+import SubjectList from './SubjectList'
+
+import './App.css'
+
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
       value: 0,
-      subjectName: '',
       subjects: []    
     }
-    this.incrementCounter = this.incrementCounter.bind(this)
-    this.handleOnChange = this.handleOnChange.bind(this)
     this.addSubject = this.addSubject.bind(this)
     this.removeSubject = this.removeSubject.bind(this)
   }
-  incrementCounter() {
-    this.setState({
-      value: this.state.value + 1
-    })
-  }
-  handleOnChange(event) {
-    this.setState({
-      subjectName: event.target.value
-    })
-  }
-  addSubject() {
+  addSubject(subjectName) {
     this.setState({    
-      subjects: [...this.state.subjects, this.state.subjectName]
+      subjects: [...this.state.subjects, subjectName]
     })
   }
   removeSubject(index) {
@@ -36,25 +29,14 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
-      <div>
-        <h3>{this.state.value}</h3>
-        <button onClick={this.incrementCounter}>+</button>
-      </div>
-      <br/>
-      <div>
-        <input type="text" onChange={this.handleOnChange}></input>   
-        <button onClick={this.addSubject}>Add Subject</button>
-      </div>
-      <div>
-        { this.state.subjects.map((subject, index) => {
-          return (
-            <li>
-              <span>{subject}</span> 
-              <button onClick={() => this.removeSubject(index)}>Remove Subject</button>
-            </li>)
-        })}
-      </div>
+      <div className="container">
+        <div className="container">        
+          <SubjectAdder name="naisk133" addSubject={this.addSubject}/>
+        </div>
+        <hr />
+        <div className="container">
+          <SubjectList subjects={this.state.subjects} removeSubject={this.removeSubject}/>
+        </div>
       </div>
     )
   }
