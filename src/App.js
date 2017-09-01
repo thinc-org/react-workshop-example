@@ -7,15 +7,9 @@ class App extends React.Component {
       subjectName: '',
       subjects: []    
     }
-    this.incrementCounter = this.incrementCounter.bind(this)
     this.handleOnChange = this.handleOnChange.bind(this)
     this.addSubject = this.addSubject.bind(this)
     this.removeSubject = this.removeSubject.bind(this)
-  }
-  incrementCounter() {
-    this.setState({
-      value: this.state.value + 1
-    })
   }
   handleOnChange(event) {
     this.setState({
@@ -37,11 +31,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      <div>
-        <h3>{this.state.value}</h3>
-        <button onClick={this.incrementCounter}>+</button>
-      </div>
-      <br/>
       <div>
         <input type="text" onChange={this.handleOnChange}></input>   
         <button onClick={this.addSubject}>Add Subject</button>
