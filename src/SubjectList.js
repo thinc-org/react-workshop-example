@@ -1,22 +1,19 @@
 import React from 'react'
 
 class SubjectList extends React.Component {
-    render() {
+  render() {
+    return (
+    <ul>
+      { this.props.subjects.map((subject, index) => {
         return (
-            <ul className="list-group">
-            { 
-                this.props.subjects.map((subject, index) => {
-                    return (
-                        <li className="list-group-item container">
-                            <button className="btn btn-sm btn-danger" onClick={() => this.props.removeSubject(index)}>x</button>
-                            <span className="col">{subject}</span> 
-                        </li>
-                    )
-                })
-            }
-          </ul>
-        )
-    }
+          <li>
+            <span>{subject}</span> 
+            <button onClick={() => this.props.removeSubject(index)}>x</button>
+          </li>)
+      })}
+    </ul>
+    )
+  }
 }
 
 export default SubjectList

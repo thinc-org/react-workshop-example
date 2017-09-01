@@ -1,23 +1,20 @@
 import React from 'react'
-
 import SubjectAdder from './SubjectAdder'
 import SubjectList from './SubjectList'
-
 import './App.css'
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      value: 0,
       subjects: []    
     }
     this.addSubject = this.addSubject.bind(this)
     this.removeSubject = this.removeSubject.bind(this)
   }
-  addSubject(subjectName) {
+  addSubject(newSubject) {
     this.setState({    
-      subjects: [...this.state.subjects, subjectName]
+      subjects: [...this.state.subjects, newSubject]
     })
   }
   removeSubject(index) {
@@ -29,14 +26,10 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="container">
-        <div className="container">        
-          <SubjectAdder name="naisk133" addSubject={this.addSubject}/>
-        </div>
-        <hr />
-        <div className="container">
-          <SubjectList subjects={this.state.subjects} removeSubject={this.removeSubject}/>
-        </div>
+      <div>
+        < SubjectAdder addSubject={this.addSubject} />
+        < hr />
+        < SubjectList subjects={this.state.subjects} removeSubject={this.removeSubject} />
       </div>
     )
   }
