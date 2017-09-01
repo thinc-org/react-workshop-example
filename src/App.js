@@ -4,10 +4,12 @@ class App extends React.Component {
     super()
     this.state = {
       value: 0,
-      subjectName: ''
+      subjectName: '',
+      subjects: []    
     }
     this.incrementCounter = this.incrementCounter.bind(this)
     this.handleOnChange = this.handleOnChange.bind(this)
+    this.addSubject = this.addSubject.bind(this)
   }
   incrementCounter() {
     this.setState({
@@ -17,6 +19,11 @@ class App extends React.Component {
   handleOnChange(event) {
     this.setState({
       subjectName: event.target.value
+    })
+  }
+  addSubject() {
+    this.setState({    
+      subjects: [...this.state.subjects, this.state.subjectName]
     })
   }
   render() {
@@ -29,7 +36,12 @@ class App extends React.Component {
       <br/>
       <div>
         <input type="text" onChange={this.handleOnChange}></input>   
-        <button onClick={ () => {alert('Add Subject Clicked!')}}>Add Subject</button>
+        <button onClick={this.addSubject}>Add Subject</button>
+      </div>
+      <div>
+        { this.state.subjects.map(subject => {
+          return <li> {subject} </li>
+        })}
       </div>
       </div>
     )
