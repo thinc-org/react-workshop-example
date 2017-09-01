@@ -6,23 +6,14 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      value: 0,
-      subjectName: '',
       subjects: []    
     }
-    this.handleOnChange = this.handleOnChange.bind(this)
     this.addSubject = this.addSubject.bind(this)
     this.removeSubject = this.removeSubject.bind(this)
   }
-  handleOnChange(event) {
-    this.setState({
-      subjectName: event.target.value
-    })
-  }
-  addSubject() {
+  addSubject(newSubject) {
     this.setState({    
-      subjects: [...this.state.subjects, this.state.subjectName],
-      subjectName: ''
+      subjects: [...this.state.subjects, newSubject]
     })
   }
   removeSubject(index) {
@@ -35,7 +26,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        < SubjectAdder handleOnChange={this.handleOnChange} addSubject={this.addSubject} value={this.state.subjectName} />
+        < SubjectAdder addSubject={this.addSubject} />
         < hr />
         < SubjectList subjects={this.state.subjects} removeSubject={this.removeSubject} />
       </div>
