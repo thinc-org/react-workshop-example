@@ -1,24 +1,85 @@
-.App {
-  text-align: center;
+body {
+  padding: 10em;
+  padding-left: 30%;
+  padding-right: 30%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+input {
+  padding: 0.7em;
+  border: 1px gray solid;
+  font-size: 1rem;
+  margin: 0.1rem 0rem 0rem 5rem;
+  outline: 0;
+  border-radius: 0.25rem 0 0 0.25rem
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+button {
+  vertical-align: top;
+  display: inline-block;
+  background-color: cornflowerblue;
+  color: whitesmoke;
+  border: 1px cornflowerblue solid;
+  border-left: 0px;
+  padding: 0.7rem 0.7rem;
+  margin: 0.1rem 0rem;
+  font-size: 1rem;
+  border-radius: 0rem 0.2rem 0.2rem 0rem;
+  transition-duration: 0.2s;
+  user-select: none;
 }
 
-.App-intro {
-  font-size: large;
+button:hover {
+  background-color: deepskyblue;
+  border: 1px solid deepskyblue;
+  transition-duration: 0.2s;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+button:active {
+  background-color: dodgerblue;
+}
+
+button:focus {
+  outline: 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0.7rem 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 0.7em;
+}
+
+li > span {
+  display: inline-block;
+  height: 2.25em;
+  line-height: 2.25em;
+  margin: 0px 0px;
+  padding: 0px 1em;
+  background-color: wheat;
+  border-radius: 0rem 0.25rem 0.25rem 0rem;
+}
+
+li > button {
+  float: left;
+  line-height: 2.25em;
+  height: 2.25em;
+  border: 0px;
+  background-color: crimson;
+  padding: 0px 5px;
+  margin: 0;
+  font-size: 1rem;
+  border-color: crimson;
+  border-radius: 0.25rem 0rem 0rem 0.25rem;
+}
+ 
+li > button:hover {
+  background-color: #FF3E3E;
+  border: 0px;
 }

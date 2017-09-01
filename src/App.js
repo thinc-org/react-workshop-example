@@ -1,12 +1,13 @@
 import React from 'react'
 import SubjectAdder from './SubjectAdder'
 import SubjectList from './SubjectList'
+import './App.css'
 
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      subjects: []    
+      subjects: ['hello']    
     }
     this.addSubject = this.addSubject.bind(this)
     this.removeSubject = this.removeSubject.bind(this)

@@ -8,7 +8,7 @@ class SubjectList extends React.Component {
         return (
           <li>
             <span>{subject}</span> 
-            <button onClick={() => this.props.removeSubject(index)}>Remove Subject</button>
+            <button onClick={() => this.props.removeSubject(index)}>x</button>
           </li>)
       })}
     </ul>
