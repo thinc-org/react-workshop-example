@@ -1,5 +1,7 @@
 import React from 'react'
 import SubjectAdder from './SubjectAdder'
+import SubjectList from './SubjectList'
+
 class App extends React.Component {
   constructor() {
     super()
@@ -33,16 +35,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      < SubjectAdder handleOnChange={this.handleOnChange} addSubject={this.addSubject} value={this.state.subjectName}/>
-      <div>
-        { this.state.subjects.map((subject, index) => {
-          return (
-            <li>
-              <span>{subject}</span> 
-              <button onClick={() => this.removeSubject(index)}>Remove Subject</button>
-            </li>)
-        })}
-      </div>
+        < SubjectAdder handleOnChange={this.handleOnChange} addSubject={this.addSubject} value={this.state.subjectName} />
+        < hr />
+        < SubjectList subjects={this.state.subjects} removeSubject={this.removeSubject} />
       </div>
     )
   }
