@@ -1,4 +1,5 @@
 import React from 'react'
+import SubjectAdder from './SubjectAdder'
 class App extends React.Component {
   constructor() {
     super()
@@ -31,10 +32,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-      <div>
-        <input type="text" onChange={this.handleOnChange}></input>   
-        <button onClick={this.addSubject}>Add Subject</button>
-      </div>
+      < SubjectAdder />
       <div>
         { this.state.subjects.map((subject, index) => {
           return (
