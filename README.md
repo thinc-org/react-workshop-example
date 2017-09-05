@@ -1,4 +1,8 @@
+
 # Thinc.'s React Workshop : Example code
+
+<p align="center"><img src="http://i.imgur.com/mLutxcH.png"></p>
+
 
 This small web app is design to demonstrate how React works, in a relatively smaller way than the [official React tutorial](https://facebook.github.io/react/tutorial/tutorial.html) (the tic-tac-toe app)
 
@@ -9,7 +13,3 @@ We do not expect to go over `App.css`. We wrote it to demonstrate how one can im
 The guide is designed to be very rough and very fast paced. Participants are likely to need a good amount of self study afterwards.
 
 This repository contains the _(expected)_ code after workshop ends.
-
-![](http://i.imgur.com/mLutxcH.png) 
-
-_powered by Thinc._ 
