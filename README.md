@@ -9,3 +9,7 @@ We do not expect to go over `App.css`. We wrote it to demonstrate how one can im
 The guide is designed to be very rough and very fast paced. Participants are likely to need a good amount of self study afterwards.
 
 This repository contains the _(expected)_ code after workshop ends.
+
+![](http://i.imgur.com/mLutxcH.png) 
+
+_powered by Thinc._ 
